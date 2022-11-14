@@ -1,0 +1,71 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 100px;
+}
+
+.register-main {
+  width: 50%;
+  height: 50%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 50px;
+}
+
+.register-data {
+  width: 60%;
+}
+
+.register-header {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.register-main h1 {
+  color: #000;
+}
+
+.register-main a {
+  color: #99d197;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.input-area {
+  width: 100%;
+}
+
+.input-area input {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid black;
+  display: block;
+  padding: 10px;
+}
+
+.submit-btn {
+  background: #26af3b;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
