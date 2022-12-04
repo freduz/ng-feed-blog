@@ -1,0 +1,16 @@
+<ng-template #hasContent>
+  <div class="tags">
+    <h5>Popular Tags</h5>
+    <div class="tag" *ngFor="let tag of tags$ | async">
+      <label (click)="selectTag(tag)">{{ tag }}</label>
+    </div>
+  </div>
+</ng-template>
+<div
+  class="spinner-border"
+  style="width: 2rem; height: 2rem"
+  role="status"
+  *ngIf="isLoading$ | async; else hasContent"
+>
+  <span class="visually-hidden">Loading...</span>
+</div>

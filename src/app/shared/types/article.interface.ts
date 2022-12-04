@@ -10,5 +10,5 @@ export interface IArticle {
   description: string;
   favorited: boolean;
   favoritesCount: number;
-  auther: IProfile;
+  author: IProfile;
 }

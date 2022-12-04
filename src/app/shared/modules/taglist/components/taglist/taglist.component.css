@@ -1,0 +1,15 @@
+.taglist {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+
+.tag {
+  background: #fff;
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px solid #f2f2f2;
+  font-size: 13px;
+}

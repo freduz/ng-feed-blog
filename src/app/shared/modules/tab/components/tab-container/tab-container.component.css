@@ -1,0 +1,28 @@
+.tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab__head {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  width: 100%;
+  background: #f2f2f2;
+  cursor: pointer;
+}
+
+.tab__toggle {
+  width: 15%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f2f2f2;
+}
+
+.tab__toggle.tab__active {
+  background: #fff;
+  cursor: pointer;
+  border-bottom: solid 2px #28ae3a;
+}

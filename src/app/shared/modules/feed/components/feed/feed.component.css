@@ -1,0 +1,43 @@
+.feed-area {
+  padding: 20px;
+  display: grid;
+  width: 100%;
+  grid-template-rows: 50px 1fr 60px;
+}
+
+.feed-content {
+  padding-top: 20px;
+}
+
+.user-img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.feed-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feed-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.feed-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.feed-info a {
+  text-decoration: none;
+  color: #26af3b;
+}
+
+.feed-bottom-details {
+  display: flex;
+  justify-content: space-between;
+}

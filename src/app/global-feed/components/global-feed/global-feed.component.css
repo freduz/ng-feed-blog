@@ -1,0 +1,16 @@
+.global__feed__container {
+  max-width: 1400px;
+  margin: 80px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.feed__container {
+  flex-basis: 80%;
+  align-self: center;
+}
+.tags__container {
+  flex-basis: 20%;
+  height: 250px;
+  overflow: scroll;
+}

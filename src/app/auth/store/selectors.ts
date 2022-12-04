@@ -24,3 +24,8 @@ export const currentUserSelector = createSelector(
   authFeatureSelector,
   (state: IAuthState) => state.currentUser
 );
+
+export const isLoadingSelector = createSelector(
+  authFeatureSelector,
+  (state: IAuthState) => state.isLoading
+);

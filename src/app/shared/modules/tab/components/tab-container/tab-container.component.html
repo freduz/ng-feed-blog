@@ -1,0 +1,12 @@
+<div class="tabs">
+  <div class="tab__head">
+    <span
+      class="tab__toggle {{ tab.isActive ? 'tab__active' : '' }}"
+      *ngFor="let tab of tabs"
+      ><a (click)="selectTab(tab)">{{ tab.tabTitle }}</a></span
+    >
+  </div>
+  <div class="tab__body">
+    <ng-content></ng-content>
+  </div>
+</div>

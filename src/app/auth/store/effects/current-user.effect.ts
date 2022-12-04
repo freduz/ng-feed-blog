@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, of, switchMap, tap } from 'rxjs';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { catchError, finalize, map, of, switchMap, tap } from 'rxjs';
 import { PersistanceService } from 'src/app/shared/services/persistance.service';
 import { ICurrentUser } from 'src/app/shared/types/currentUser.interface';
 import { AuthService } from '../../services/auth.service';
@@ -15,9 +16,11 @@ export class GetCurrentUserEffect {
   getCurrentUser$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getCurrentUserAction),
+      tap(() => this.spinnerService.show()),
       switchMap(() => {
         const token = this.persistenceService.get('accessToken');
         if (!token) {
+          this.spinnerService.hide();
           return of(getCurrentUserFailureAction());
         }
         return this.authservice.getCurrentUser().pipe(
@@ -26,7 +29,8 @@ export class GetCurrentUserEffect {
           }),
           catchError(() => {
             return of(getCurrentUserFailureAction());
-          })
+          }),
+          finalize(() => this.spinnerService.hide())
         );
       })
     )
@@ -35,6 +39,7 @@ export class GetCurrentUserEffect {
   constructor(
     private actions$: Actions,
     private persistenceService: PersistanceService,
-    private authservice: AuthService
+    private authservice: AuthService,
+    private spinnerService: NgxSpinnerService
   ) {}
 }

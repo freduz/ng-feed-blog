@@ -6,5 +6,5 @@ export interface IAuthState {
   currentUser: ICurrentUser | null;
   isLoggedIn: boolean | null;
   validationErrors: IBackendErrorInterface | null;
-  isLoading?: boolean;
+  isLoading: boolean;
 }

@@ -1,0 +1,15 @@
+<div class="pagination-box">
+  <div class="pag-links">
+    <div
+      class="link-item"
+      [ngClass]="{ 'active-item': page == currentPage }"
+      *ngFor="let page of pages"
+      [routerLink]="[url]"
+      [queryParams]="{ page }"
+    >
+      <div>
+        {{ page }}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,12 @@
-<mc-topbar></mc-topbar>
-<router-outlet></router-outlet>
-<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+<ng-container *ngIf="!(isLoading$ | async)">
+  <mc-topbar></mc-topbar>
+  <router-outlet></router-outlet>
+</ng-container>
+<ngx-spinner
+  bdColor="rgb(255,255,255)"
+  size="medium"
+  color="#26af3b"
+  type="square-jelly-box"
+  [fullScreen]="true"
+  ><p style="color: black">Loading...</p></ngx-spinner
+>
