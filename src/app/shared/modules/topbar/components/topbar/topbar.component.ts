@@ -21,7 +21,6 @@ export class TopBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoggedIn$ = this.store.pipe(select(isLoggedInSelector));
-    this.isLoggedIn$.subscribe(console.log);
     this.currentUser$ = this.store.pipe(select(currentUserSelector));
   }
 }

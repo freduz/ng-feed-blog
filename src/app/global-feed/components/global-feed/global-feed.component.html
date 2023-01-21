@@ -1,2 +1,28 @@
-<h1>Global Feed Goes here</h1>
-<mc-feed [url]="'articles'"></mc-feed>
+<mc-banner></mc-banner>
+<div class="global__feed__container">
+  <div class="feed__container">
+    <app-tab-container>
+      <app-tab tabTitle="Your feed" *ngIf="isLoggedIn$ | async">
+        <div class="tab__content">
+          <mc-feed [url]="'articles/feed'"></mc-feed>
+        </div>
+      </app-tab>
+      <app-tab tabTitle="Global">
+        <div class="tab__content">
+          <mc-feed [url]="'articles'"></mc-feed>
+        </div>
+      </app-tab>
+      <app-tab
+        [tabTitle]="'#' + selectedTag"
+        *ngIf="selectedTag$ | async as selectedTag"
+      >
+        <div class="tab__content">
+          <!-- <mc-feed [url]="'/articles'"></mc-feed> -->
+        </div>
+      </app-tab>
+    </app-tab-container>
+  </div>
+  <div class="tags__container">
+    <mc-popular-tags></mc-popular-tags>
+  </div>
+</div>

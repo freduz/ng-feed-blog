@@ -16,5 +16,10 @@ export const errorSelector = createSelector(
 
 export const feedSelector = createSelector(
   feedFeatureSelector,
-  (state: IFeedState) => state.data
+  (state: IFeedState) => state.data?.articles
+);
+
+export const feedCount = createSelector(
+  feedFeatureSelector,
+  (state: IFeedState) => state.data?.articlesCount
 );

@@ -11,10 +11,9 @@
         <ul class="nav">
           <li><a href="">Home</a></li>
           <ng-template #notLogged>
-            {{ isLoggedIn$ | async }}
             <div class="auth-links">
-              <li><a href="">Sign in</a></li>
-              <li><a href="">Sign up</a></li>
+              <li><a [routerLink]="['auth', 'login']">Sign in</a></li>
+              <li><a [routerLink]="['auth', 'register']">Sign up</a></li>
             </div>
           </ng-template>
           <ng-container *ngIf="isLoggedIn$ | async; else notLogged">

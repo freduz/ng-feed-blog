@@ -1,0 +1,28 @@
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 10px;
+}
+
+.tag {
+  background: #818a91;
+  border-radius: 10px;
+  padding: 4px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.tag label {
+  cursor: pointer;
+}
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner-border {
+  margin-top: 20px;
+}

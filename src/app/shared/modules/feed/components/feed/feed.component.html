@@ -1,1 +1,45 @@
-<h2>Feed goes here</h2>
+<div class="text-center p-3">
+  <div
+    class="spinner-border"
+    style="width: 3rem; height: 3rem"
+    role="status"
+    *ngIf="isLoading$ | async"
+  >
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<ng-container *ngIf="!(isLoading$ | async)">
+  <div class="feed-area" *ngFor="let feed of feeds$ | async">
+    <div class="feed-header">
+      <div class="feed-meta">
+        <img class="user-img" alt="svgImg" [src]="feed.author.image" />
+        <div class="feed-info">
+          <a href="">{{ feed.author.username }}</a>
+          <span class="created-date">{{ feed.createdAt | date }}</span>
+        </div>
+      </div>
+      <div class="feed-likes">
+        <div>
+          <h4>Add to fav</h4>
+        </div>
+      </div>
+    </div>
+    <div class="feed-content">
+      <h1 class="article-title">{{ feed.title }}</h1>
+      <p class="article-desc">{{ feed.description }}</p>
+    </div>
+    <div class="feed-bottom-details">
+      <div class="read-more"><a href="">Read More...</a></div>
+      <div class="pagination">
+        <mc-taglist [tags]="feed.tagList"></mc-taglist>
+      </div>
+    </div>
+    <hr />
+  </div>
+</ng-container>
+<mc-pagination
+  [currentPage]="currentPage"
+  [url]="baseUrl"
+  [limit]="limit"
+  [total]="(totalCount$ | async) != undefined ? (totalCount$ | async)! : 0"
+></mc-pagination>

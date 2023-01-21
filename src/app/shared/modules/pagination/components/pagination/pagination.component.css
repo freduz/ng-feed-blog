@@ -1,0 +1,35 @@
+.pagination-box {
+  width: 100%;
+  padding: 20px;
+}
+
+.pag-links {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.link-item {
+  flex-basis: 1%;
+  width: 100%;
+  height: 40px;
+  border-radius: 3px;
+  border: 1px solid gray;
+  padding: 10px;
+  cursor: pointer;
+  color: #28ae3a;
+}
+
+.active-item {
+  background-color: #28ae3a !important;
+  color: #fff !important;
+}
+
+.link-item:hover {
+  background: #f2f2f2;
+}
+
+.link-item a {
+  text-decoration: none;
+}

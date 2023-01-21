@@ -26,7 +26,5 @@ export class BackEndErrorComponent implements OnInit {
     this.backendErrors = Object.keys(this.errors).map((key) => {
       return `${key} ${this.errors[key]}`;
     });
-
-    console.log(this.backendErrors);
   }
 }
